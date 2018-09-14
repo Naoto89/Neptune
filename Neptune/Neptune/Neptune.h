@@ -3,13 +3,18 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Neptune.h"
 
-class Neptune : public QMainWindow
+class CNeptune : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Neptune(QWidget *parent = Q_NULLPTR);
+	CNeptune(QWidget *parent = Q_NULLPTR);
+	~CNeptune();
+
+	void initTreeView(QString& qstrRootPath);
 
 private:
-	Ui::NeptuneClass ui;
+	Ui::CNeptuneMainWindow m_NeptuneMain;
+	std::unique_ptr<QFileSystemModel> m_pFileSystemModel;
+
 };

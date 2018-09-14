@@ -83,6 +83,16 @@
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
     </QtRcc>
+    <PostBuildEvent>
+      <Command>xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Cored.dll     $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Cored.pdb  $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Guid.dll       $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Guid.pdb    $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Widgetsd.dll     $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Widgetsd.pdb  $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Chartsd.dll   $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Chartsd.pdb   $(SolutionDir)$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -118,6 +128,11 @@
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
     </QtRcc>
+    <PostBuildEvent>
+      <Command>xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Core.dll           $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Gui.dll             $(SolutionDir)$(Platform)\$(Configuration)\
+xcopy  /D $(SolutionDir)..\..\lib\win\x64\Qt5Widgets.dll     $(SolutionDir)$(Platform)\$(Configuration)\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
