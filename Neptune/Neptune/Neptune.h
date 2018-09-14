@@ -13,6 +13,9 @@ public:
 
 	void initTreeView(QString& qstrRootPath);
 
+private slots:
+	void slotTreeViewExpanded(QModelIndex qIndex);
+
 private:
 	Ui::CNeptuneMainWindow m_NeptuneMain;
 	std::unique_ptr<QFileSystemModel> m_pFileSystemModel;

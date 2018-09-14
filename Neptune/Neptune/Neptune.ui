@@ -13,7 +13,13 @@
   <property name="windowTitle">
    <string>Neptune</string>
   </property>
-  <widget class="QWidget" name="m_centralWidget"/>
+  <widget class="QWidget" name="m_centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QListWidget" name="m_listWidget"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="m_menuBar">
    <property name="geometry">
     <rect>
@@ -68,5 +74,25 @@
  <resources>
   <include location="Neptune.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>m_treeView</sender>
+   <signal>expanded(QModelIndex)</signal>
+   <receiver>CNeptuneMainWindow</receiver>
+   <slot>slotTreeViewExpanded(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>396</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotTreeViewExpanded(QModelIndex)</slot>
+ </slots>
 </ui>
