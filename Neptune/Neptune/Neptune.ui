@@ -46,7 +46,7 @@
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="m_dockWidgetContents">
+   <widget class="QWidget" name="m_dockWidgetContentsTree">
     <layout class="QVBoxLayout" name="verticalLayout">
      <property name="spacing">
       <number>4</number>
@@ -65,6 +65,60 @@
      </property>
      <item>
       <widget class="QTreeView" name="m_treeView"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="m_dockWidgetLog">
+   <property name="windowTitle">
+    <string>Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="m_dockWidgetContentsLog">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <property name="leftMargin">
+      <number>4</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>4</number>
+     </property>
+     <property name="bottomMargin">
+      <number>1</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="m_pushButtonLogClear">
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QTextEdit" name="m_textEditLog">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -91,8 +145,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_pushButtonLogClear</sender>
+   <signal>clicked()</signal>
+   <receiver>CNeptuneMainWindow</receiver>
+   <slot>slotLogClear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotTreeViewExpanded(QModelIndex)</slot>
+  <slot>slotLogClear()</slot>
  </slots>
 </ui>

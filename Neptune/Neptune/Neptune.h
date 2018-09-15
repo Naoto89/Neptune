@@ -15,9 +15,11 @@ public:
 
 private slots:
 	void slotTreeViewExpanded(QModelIndex qIndex);
+	void slotLogClear();
 
 private:
 	Ui::CNeptuneMainWindow m_NeptuneMain;
 	std::unique_ptr<QFileSystemModel> m_pFileSystemModel;
 
+	QString m_qsLastOpenedPath;
 };
